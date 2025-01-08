@@ -31,15 +31,13 @@ class _MainPageState extends State<MainPage> {
             borderRadius: BorderRadius.all(Radius.circular(13)),
             child: Container(
               decoration: BoxDecoration(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Color(0xfff8f8f8),
-                    blurRadius: 10,
-                    spreadRadius: 10
-                  ),
-                ]
-              ),
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                        color: Color(0xfff8f8f8),
+                        blurRadius: 10,
+                        spreadRadius: 10),
+                  ]),
               child: Image.asset("assets/user.png"),
             ),
           )
@@ -52,10 +50,9 @@ class _MainPageState extends State<MainPage> {
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(13)),
-        color: Theme.of(context).scaffoldBackgroundColor,
-        boxShadow: AppTheme.shadow
-      ),
+          borderRadius: BorderRadius.all(Radius.circular(13)),
+          color: Theme.of(context).scaffoldBackgroundColor,
+          boxShadow: AppTheme.shadow),
       child: Icon(
         icon,
         color: color,
@@ -86,13 +83,14 @@ class _MainPageState extends State<MainPage> {
           ),
           Spacer(),
           !isHomePageSelected
-          ? Container(
-            padding: EdgeInsets.all(10),
-            child: Icon(
-              Icons.deblur_outlined,
-              color: LightColor.orange,
-            ),
-          ).ripple(() {}, borderRadius: BorderRadius.all(Radius.circular(13)))
+              ? Container(
+                  padding: EdgeInsets.all(10),
+                  child: Icon(
+                    Icons.deblur_outlined,
+                    color: LightColor.orange,
+                  ),
+                ).ripple(() {},
+                  borderRadius: BorderRadius.all(Radius.circular(13)))
               : SizedBox()
         ],
       ),
@@ -122,15 +120,10 @@ class _MainPageState extends State<MainPage> {
               child: Container(
                 height: AppTheme.fullHeight(context) - 50,
                 decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xfffbfbfb),
-                      Color(0xfff7f7f7),
-                    ],
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter
-                  )
-                ),
+                    gradient: LinearGradient(colors: [
+                  Color(0xfffbfbfb),
+                  Color(0xfff7f7f7),
+                ], begin: Alignment.topCenter, end: Alignment.bottomCenter)),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
@@ -138,16 +131,15 @@ class _MainPageState extends State<MainPage> {
                     customTitle(),
                     Expanded(
                       child: AnimatedSwitcher(
-                        duration: Duration(milliseconds: 300),
-                        switchInCurve: Curves.easeInToLinear,
-                        switchOutCurve: Curves.easeOutBack,
-                        child: isHomePageSelected
-                          ? MyHomePage()
-                            : Align(
-                          alignment: Alignment.topCenter,
-                          child: ShoppingCartPage(),
-                        )
-                      ),
+                          duration: Duration(milliseconds: 300),
+                          switchInCurve: Curves.easeInToLinear,
+                          switchOutCurve: Curves.easeOutBack,
+                          child: isHomePageSelected
+                              ? MyHomePage()
+                              : Align(
+                                  alignment: Alignment.topCenter,
+                                  child: ShoppingCartPage(),
+                                )),
                     )
                   ],
                 ),
